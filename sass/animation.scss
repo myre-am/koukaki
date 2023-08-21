@@ -1,0 +1,31 @@
+@keyframes fadeInFromTop {
+  0% {
+      opacity: 0;
+      transform: translateY(-100px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInFromBottom {
+  0% {
+      opacity: 0;
+      transform: translateY(100px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+header, .banner {
+  animation: fadeInFromTop 1s forwards;
+  opacity: 0; 
+}
+
+section, footer {
+  animation: fadeInFromBottom 1s forwards;
+  opacity: 0; 
+}
