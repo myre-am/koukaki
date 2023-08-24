@@ -16,10 +16,6 @@
   z-index: 1;
 }
 
-#primary {
-  background-image: url("/assets/images/Rectangle_33.png");
-}
-
 @keyframes fadeInFromTop {
   0% {
     opacity: 0;
@@ -50,6 +46,41 @@ section, footer {
   opacity: 0;
 }
 
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(1em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(1em);
+}
+
+.title span.visible {
+  animation: fadeInUp 0.3s forwards;
+}
+
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after {
+  animation: rotateFlower 5s infinite linear;
+}
+
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 #oscar {
   position: relative;
   padding-top: 10em;
