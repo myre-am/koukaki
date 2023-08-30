@@ -5,7 +5,7 @@ get_header();
 
     <main id="primary" class="site-main">
         <section class="banner">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+            <img class="logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
             <video autoplay muted loop>
                 <source src="<?php echo get_stylesheet_directory_uri() . '/assets/video/koukaki_video.mp4'; ?>" type="video/mp4">
             </video>
@@ -15,43 +15,10 @@ get_header();
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
-            <?php
-            $args = array(
-                'post_type' => 'characters',
-                'posts_per_page' => -1,
-                'meta_key'  => '_main_char_field',
-                'orderby'   => 'meta_value_num',
-
-            );
-            $characters_query = new WP_Query($args);
-            ?>
-            <article id="characters">
-                <div class="main-character">
-                    <h3 class="title"><span>Les</span> <span>personnages</span></h3>
-                    <?php
-                    $main_character = $characters_query->posts[0];
-                    echo '<figure>';
-                    echo get_the_post_thumbnail( $main_character->ID, 'full' );
-                    echo '<figcaption>'. $main_character->post_title . '</figcaption>';
-                    echo '</figure>';
-                    $characters_query->next_post();
-                    ?>
-                </div>
-                <div class="other-characters">
-                    <?php
-                    while ( $characters_query->have_posts() ) {
-                        $characters_query->the_post();
-                        echo '<figure>';
-                        echo get_the_post_thumbnail( get_the_ID(), 'full' );
-                        echo '<figcaption>';
-                        the_title();
-                        echo'</figcaption>';
-                        echo '</figure>';
-                    }
-                    ?>
-                </div>
-            </article>
-            <article id="place">
+            <?php get_template_part('template-parts/personnages'); ?>
+            <article id="place" class="place">
+                <img class="bigcloud" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/big_cloud.png'; ?> " alt="Big Cloud">
+                <img class="littlecloud" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/little_cloud.png'; ?> " alt="Little Cloud">
                 <div>
                     <h3 class="title"><span>Le</span> <span>Lieu</span></h3>
                     <p><?php echo get_theme_mod('place'); ?></p>

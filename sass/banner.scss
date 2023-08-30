@@ -3,7 +3,6 @@
     overflow: hidden;
     width: 100%;
     
-
     video {
         width: 100%;
         height: auto;
@@ -14,7 +13,23 @@
     }
 
     img {
-        position: relative;
-        z-index: 1;
+        position: absolute; 
+        z-index: 1;    
     }
 }
+
+@keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .logo {
+    animation: float 3s infinite;
+  }
