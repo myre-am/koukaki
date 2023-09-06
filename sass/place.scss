@@ -1,25 +1,23 @@
 .story {
-    #place {
-      position: relative;
-      background-image: url('../images/place_image.png');
-      overflow: hidden;
-  
-      .bigcloud {
-        position: relative ;
-        width: 300px;
-        height: 120px;
-        top: 118px;
-        filter: blur(10px);
+  #place {
+    background-image: url('../images/place_image.png');
+    position: relative;
 
-      }
-  
-      .littlecloud {
-       position: relative;
-       width: 140px;
-       height: 50px;
-       top: 245px;
-       filter: blur(10px);
-      }
+    .bigcloud {
+      filter: blur(15px);
+      position: absolute;
+      right: -200px;
+      top: 80px;
+      transform: translate3d(300px, 0, 0);
     }
-  }
-  
+
+    .littlecloud {
+      filter: blur(15px);
+      position: absolute;
+      right: 220px;
+      top: 272px;
+      transform: translate3d(300px, 0, 0);
+      
+    }
+}
+}

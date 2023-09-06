@@ -62,7 +62,8 @@ section, footer {
 #studio h2::before,
 #studio h2::after,
 .site-footer::before,
-.site-footer::after {
+.site-footer::after,
+.site-footer ul::after {
     animation: rotateFlower 5s infinite linear;
 }
 
@@ -73,4 +74,21 @@ section, footer {
     to {
         transform: rotate(360deg);
     }
+}
+
+
+
+// 
+
+.js-fade-in-title {
+  opacity: 0;
+  
+  transition: opacity 0.5s;
+  
+
+  .active & {
+    opacity: 1;
+    
+     
+  }
 }

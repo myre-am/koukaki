@@ -7,7 +7,10 @@ function theme_enqueue_styles() {
     wp_enqueue_style('swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css');
     wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', array(), null, true);
     wp_enqueue_script('initialize-swiper', get_stylesheet_directory_uri() . '/assets/js/initialize-swiper.js', array('swiper-js'), '1.0', true);
-    wp_enqueue_script('custom-animations', get_stylesheet_directory_uri() . '/assets/js/script.js', array(), '1.0', true);
+    wp_enqueue_script('custom-animations', get_stylesheet_directory_uri() . '/assets/js/script.js', array(), filemtime(get_stylesheet_directory(), true));
+    wp_enqueue_script('skrollr-js', 'https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js', array(), null, true);
+    wp_enqueue_script('scroll-animations', get_stylesheet_directory_uri() . '/assets/js/scroll-animations.js', array(), '1.0', true);
+
 }
 
 // Ensure customizer options from parent theme are used in child theme

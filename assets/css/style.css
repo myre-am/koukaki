@@ -14,6 +14,7 @@
 .banner img {
   position: absolute;
   z-index: 1;
+  right: 350px;
 }
 
 @keyframes float {
@@ -86,7 +87,8 @@ section, footer {
 #studio h2::before,
 #studio h2::after,
 .site-footer::before,
-.site-footer::after {
+.site-footer::after,
+.site-footer ul::after {
   animation: rotateFlower 5s infinite linear;
 }
 
@@ -98,6 +100,14 @@ section, footer {
     transform: rotate(360deg);
   }
 }
+.js-fade-in-title {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.active .js-fade-in-title {
+  opacity: 1;
+}
+
 #oscar {
   position: relative;
   padding-top: 10em;
@@ -149,23 +159,22 @@ h3 {
 }
 
 .story #place {
-  position: relative;
   background-image: url("../images/place_image.png");
-  overflow: hidden;
+  position: relative;
 }
 .story #place .bigcloud {
-  position: relative;
-  width: 300px;
-  height: 120px;
-  top: 118px;
-  filter: blur(10px);
+  filter: blur(15px);
+  position: absolute;
+  right: -200px;
+  top: 80px;
+  transform: translate3d(300px, 0, 0);
 }
 .story #place .littlecloud {
-  position: relative;
-  width: 140px;
-  height: 50px;
-  top: 245px;
-  filter: blur(10px);
+  filter: blur(15px);
+  position: absolute;
+  right: 220px;
+  top: 272px;
+  transform: translate3d(300px, 0, 0);
 }
 
 /*# sourceMappingURL=style.css.map */
